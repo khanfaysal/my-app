@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
   const PeopleArray = ['Barun', 'Rahim', 'Barim', 'Churim', 'Murim','juma'];
@@ -32,6 +33,7 @@ function App() {
         {/* <h1 style = {style} >My Name is {person.name +' '+ person.profession}</h1> */}
         {/* <h2 style = {{color: 'yellow' ,backgroundColor: 'gray'}} >My Alternative is {person2.name+' '+ person.profession}</h2> */}
         <p>My First React Code</p>
+        <Counter></Counter>
         <ul>
           {
             PeopleArray.map(people =><li>{people}</li>)
@@ -64,6 +66,19 @@ function App() {
     </div>
   );
 }
+function Counter(){
+  const [count, setCount] = useState(10);
+  const handleIncrease = () => setCount(count + 1);
+  const handleDecrease = () => setCount(count - 1);
+  return (
+    <div>
+      <h1>Count:{count}</h1>
+      <button onClick = {() => setCount(count + 1)}>increase</button>
+      <button onClick = {() =>setCount(count-1)}>Decrease</button>
+    </div>
+  )
+}
+
 function Products(props){
   const ProductsStyle = {
     border: '1px solid gray',
