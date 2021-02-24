@@ -2,13 +2,17 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const PeopleArray = ['Barun', 'Rahim', 'Barim', 'Churim', 'Murim'];
+  const PeopleArray = ['Barun', 'Rahim', 'Barim', 'Churim', 'Murim','juma'];
   const productList = [
     {name: 'Photoshop', price: '$59.99'},
     {name: 'Illustrator', price: '$45.99'},
     {name: 'Lightgroom', price: '$5.99'},
-    {name: 'PDF Reader', price: '$3.99'}
-  ]
+    {name: 'PDF Reader', price: '$3.99'},
+    
+  ];
+//  const peopleNames = Array.from(PeopleArray);
+//  console.log(peopleNames);
+ 
   // var person = {
   //   name: 'khan',
   //   profession: 'React Developer'
@@ -28,12 +32,30 @@ function App() {
         {/* <h1 style = {style} >My Name is {person.name +' '+ person.profession}</h1> */}
         {/* <h2 style = {{color: 'yellow' ,backgroundColor: 'gray'}} >My Alternative is {person2.name+' '+ person.profession}</h2> */}
         <p>My First React Code</p>
-
-        {/* for product work */}
-        <Products products = {productList[0]}></Products>
+        <ul>
+          {
+            PeopleArray.map(people =><li>{people}</li>)
+          }
+          {
+            productList.map(productArra => <li>{productArra.name}</li>)
+          }
+          
+        </ul>
+        <ul>
+          <li>{PeopleArray[0]}</li>
+          <li>{PeopleArray[1]}</li>
+          <li>{PeopleArray[2]}</li>
+          <li>{PeopleArray[3]}</li>
+        </ul>
+        {/* dynamic for product work */}
+        {
+          productList.map(pd =><Products products = {pd}></Products>)
+        }
+        {/*  manually for product work */}
+        {/* <Products products = {productList[0]}></Products>
         <Products products = {productList[1]}></Products>
         <Products products = {productList[2]}></Products>
-        <Products products = {productList[3]}></Products>
+        <Products products = {productList[3]}></Products> */}
 
         <Person name = {PeopleArray[0]} profession = 'Student' Mobile ='0147828273'></Person>
         <Person name = 'Lekhon' profession = 'Student' Mobile ='017474839'></Person>
